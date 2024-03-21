@@ -3,20 +3,17 @@
 Aaron PenKruger
 "python-challenge 'PyPoll'" Due 3/21/2024
 
-In this Challenge, you are tasked with helping a small, rural town modernize its vote-counting process.
-
-You will be given a set of poll data called election_data.csv. The dataset is composed of three columns: "Voter ID", "County", and "Candidate". Your task is to create a Python script that analyzes the votes and calculates each of the following values:
+The objective of this challenge was to collect Voter data from 'election_data.csv'
+and return the following:
 
 The total number of votes cast
-
 A complete list of candidates who received votes
-
 The percentage of votes each candidate won
-
 The total number of votes each candidate won
 
 The winner of the election based on popular vote
 
+The dataset is composed of three columns: "Voter ID", "County", and "Candidate"
 """
 
 #Import Modules
@@ -78,17 +75,17 @@ with open(election_data_path, "r") as csvfile:
 
 
 
-    #Create Variable for output String to print and export 
+    #Create Variable for Output String to print and export 
                 
-        # Initiate String               
+
+        # Initiate Output String               
     output_string = \
         f"\nElection Results \n\n----------------- \n\nTotal Votes: {total_votes}\n\n-----------------\n\n"
-    
-        # For Loop to Add Dictionary of Candidates, Percentages and Votes to String
+            # For Loop to Add Dictionary of Candidates, Percentages and Votes to Output String
     for candidate, info in candidate_dict.items():
         output_string += f"{candidate}: {info['Percent of Total']}% ({info['Votes']}) \n"
 
-        # Add Winner to String
+        # Add Winner to Output String
     output_string += f"\n-------------- \n\nWinner: {election_winner} \n\n---------------"
 
     print(output_string)
