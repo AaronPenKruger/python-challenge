@@ -1,7 +1,7 @@
 
 """
 Aaron PenKruger
-"python-challenge" Due 3/21/2024
+"python-challenge 'PyBank'" Due 3/21/2024
 
 This assigment, 'python-challenge', was to find the following values from a csv file, 'budget_data.csv':
 
@@ -25,13 +25,13 @@ import csv
 budget_data_path = os.path.join("..","Resources","budget_data.csv")
 
 with open(budget_data_path,"r") as csvfile:
-
+    
     # Split the data at the commas
     csvreader = csv.reader(csvfile, delimiter=",")
 
     #Skip Header
     header = next(csvreader)
-    print(header)
+    
 
     # Set initial values for variables "Total Months", "Net Profit/Losses", "Greatest Profit", "Greatest Loss"
     # Create list of changes in proffit/losses to be appended per month
